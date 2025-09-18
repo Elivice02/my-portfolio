@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Portfolio</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1: #1f1c2c;
+      --bg2: #6a4f9a;
+      --accent: #ffcc70;
+      --card-bg: rgba(255,255,255,0.08);
+      --header-height: 72px;
+      --section-padding: 2.5rem;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth; scroll-padding-top: var(--header-height);}
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,Segoe UI,Roboto,sans-serif;
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:#fff;
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-x:hidden;
+    }
+    h1,h2,h3,h4,p,small{margin:0;padding:0}
+
+    /* particles */
+    #particles-js{
+      position:fixed; inset:0; z-index:-1;
+      background:linear-gradient(135deg,rgba(31,28,44,0.9),rgba(146,141,171,0.85));
+    }
+
+    /* header */
+    header{
+      position:fixed; top:0; left:0; right:0;
+      height:var(--header-height);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 2rem;
+      background:rgba(0,0,0,0.35);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,0.03);
+      z-index:1000;
+    }
+    .brand{color:var(--accent); font-weight:700; font-size:1.25rem}
+    nav a{
+      color:#fff; text-decoration:none; margin-left:1rem; font-weight:600;
+      opacity:0.92; transition:color .22s, transform .18s;
+    }
+    nav a:hover{ color:var(--accent); transform:translateY(-2px) }
+
+    /* layout */
+    .container{ max-width:1100px; margin:0 auto; padding:0 1rem; }
+    section{ padding: var(--section-padding) 0; position:relative }
+
+    /* hero two-column */
+    .hero{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;min-height:90vh; padding-top:calc(var(--header-height) + 1.5rem)}
+    .hero-left{flex:1;min-width:280px;padding-right:1rem}
+    .hero-right{flex:1;min-width:260px;display:flex;justify-content:center}
+    .hero h1{font-size:2.4rem;font-weight:700;margin-bottom:.5rem;color:var(--accent)}
+    .hero p{color:rgba(255,255,255,.85);max-width:500px;margin-bottom:1rem}
+    .hero-right img{
+      width: 220px; height: 220px; object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+
+    /* typewriter */
+    #typewriter{font-weight:700;white-space:nowrap;display:inline-block}
+    .cursor{
+      display:inline-block;width:3px;height:1.1em;background:var(--accent);
+      margin-left:3px;border-radius:2px;
+      animation:blink 1s steps(2,start) infinite;
+    }
+    @keyframes blink{50%{opacity:0}}
+
+    /* section headings */
+    h3{color:var(--accent);font-size:1.5rem;margin-bottom:.75rem;font-weight:700}
+
+    /* grid & cards */
+    .grid{display:grid;gap:1rem}
+    .grid-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{
+      background:var(--card-bg);padding:1.15rem;border-radius:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.25);
+      transition:transform .28s ease, background .28s ease;
+    }
+    .card:hover{transform:translateY(-8px);background:rgba(255,255,255,0.12)}
+    small{color:rgba(255,255,255,0.75);display:block;margin-top:.35rem;font-size:.92rem}
+
+    /* buttons */
+    .btn{
+      display:inline-block;margin-right:.5rem;
+      padding:.55rem .9rem;border-radius:10px;
+      border:2px solid var(--accent);color:var(--accent);
+      font-weight:700;text-decoration:none;transition:.18s;
+    }
+    .btn:hover{background:var(--accent);color:var(--bg1)}
+
+    footer{
+      padding:1.25rem 0;text-align:center;
+      border-top:1px solid rgba(255,255,255,0.03);
+      color:rgba(255,255,255,0.75);
+    }
+
+    @media(max-width:768px){
+      .hero{flex-direction:column;text-align:center}
+      .hero-left{padding:0;margin-bottom:2rem}
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <!-- header -->
+  <header>
+    <div class="brand">My Portfolio</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#career">Career</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Hi, I'm <span id="typewriter"></span><span class="cursor"></span></h1>
+        <p>A passionate developer building impactful digital solutions and elegant user experiences.</p>
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn" href="#contact">Contact Me</a>
+      </div>
+      <div class="hero-right">
+        <img src="Elivice.jpg" alt="My Photo">
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h3>About Me</h3>
+      <p style="color:rgba(255,255,255,0.9);max-width:900px;margin-top:.6rem">
+        Since I started my journey in tech, I've been exploring and building projects that solve real-world problems.
+        Over time, I've gained skills in web development, database management, and system design.
+        My career path reflects continuous growth, learning, and contributions to impactful projects.
+      </p>
+    </section>
+
+    <!-- CAREER -->
+    <section id="career">
+      <h3>Career Journey</h3>
+      <div class="grid grid-2" style="margin-top:.85rem">
+        <div class="card">
+          <h4 style="font-weight:700">Software Developer @ [Company]</h4>
+          <small>2023 - Present</small>
+          <p style="margin-top:.6rem;color:rgba(255,255,255,0.9)">Working on modern applications, improving performance, and leading development of new features.</p>
+        </div>
+        <div class="card">
+          <h4 style="font-weight:700">Internship @ [Company]</h4>
+          <small>2022</small>
+          <p style="margin-top:.6rem;color:rgba(255,255,255,0.9)">Contributed to internal tools, fixed bugs, and gained hands-on experience in collaborative development.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h3>Projects</h3>
+      <div class="grid grid-2" style="margin-top:.85rem">
+        <div class="card"><h4 style="font-weight:700">Employee Attendance System</h4><p style="margin-top:.6rem;color:rgba(255,255,255,0.9)">Full-stack system with HR/admin dashboards, task management, and leave functionality.</p></div>
+        <div class="card"><h4 style="font-weight:700">Laser Display System</h4><p style="margin-top:.6rem;color:rgba(255,255,255,0.9)">Raster & calligraphic scanning with hardware-aware algorithms and optimizations.</p></div>
+        <div class="card"><h4 style="font-weight:700">Portfolio Website</h4><p style="margin-top:.6rem;color:rgba(255,255,255,0.9)">This very site — animated, responsive, and simple to host.</p></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h3>Contact Me</h3>
+      <p style="margin-top:.5rem;color:rgba(255,255,255,0.9)">Let's connect and build something great together.</p>
+      <div style="margin-top:.75rem">
+        <a class="btn" href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+        <a class="btn" href="mailto:your@email.com">Email</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <script>document.write(new Date().getFullYear())</script> [Your Name]. All rights reserved.
+  </footer>
+
+  <!-- particles -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js',{
+      particles:{
+        number:{value:70,density:{enable:true,value_area:800}},
+        color:{value:"#ffffff"},
+        opacity:{value:0.6,random:true},
+        size:{value:3,random:true},
+        line_linked:{enable:true,distance:140,color:"#ffffff",opacity:0.08,width:1},
+        move:{enable:true,speed:1.6}
+      },
+      interactivity:{
+        events:{onhover:{enable:true,mode:"grab"},onclick:{enable:true,mode:"push"}},
+        modes:{grab:{distance:140,line_linked:{opacity:0.18}},push:{particles_nb:4}}
+      },
+      retina_detect:true
+    });
+
+    // typewriter
+    (function(){
+      const target=document.getElementById("typewriter");
+      const fullText="Elivice Barthon, Developer"; // replace with real name
+      let i=0,speed=60;
+      function type(){
+        if(i<fullText.length){
+          target.textContent+=fullText.charAt(i);
+          i++;setTimeout(type,speed);
+        }
+      }
+      setTimeout(type,450);
+    })();
+  </script>
+</body>
+</html>
